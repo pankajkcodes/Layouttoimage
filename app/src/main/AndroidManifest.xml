@@ -16,6 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        // PROVIDER FOR File Provider
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"

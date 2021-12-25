@@ -49,18 +49,18 @@ public class MainActivity extends AppCompatActivity {
 
         sharBtn.setOnClickListener((v -> {
 
-
             shareBitmap();
         }));
     }
 
     @SuppressLint("SetWorldReadable")
     private void shareBitmap() {
-        Drawable drawable = imageView.getDrawable();
-        Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
+
+        Bitmap bitmap = getBitmapFromView(layout_view);
 
         try {
-            File file = new File(getApplicationContext().getExternalCacheDir(), File.separator + bgDrawable);
+            File file = new File(getApplicationContext().getExternalCacheDir(),
+                    "img.png");
             FileOutputStream fOut = new FileOutputStream(file);
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, fOut);
             fOut.flush();
